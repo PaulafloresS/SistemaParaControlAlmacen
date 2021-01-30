@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de usuarios</title>
+    <!-- Conexión con la base de datos -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
+    <!-- firestore -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-firestore.js"></script>
+
+
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
+
+
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyBkFmRBYvBkXluGgg-fS0D-BDqjbEy87TE",
+            authDomain: "vales-9c420.firebaseapp.com",
+            projectId: "vales-9c420",
+            storageBucket: "vales-9c420.appspot.com",
+            messagingSenderId: "346953067056",
+            appId: "1:346953067056:web:1acf30d0392f747d4b9bf5",
+            measurementId: "G-NPYDH2SM73"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+</head>
+
+<body background="../recursos/leo.jpg_large">
+
+    <!-- Nav bar responsive con todos los enlaces a otras pantallas -->
+
+    <div class="container mt-3">
+        <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand text-white">Sistema de vales (Jefe de almacén)</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" aria-current="page" href="homeJefe.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" aria-current="page"
+                                href="jefesupremo.html">Registro</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" aria-current="page"
+                                href="administracionEmpleados.html">Administración</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" aria-current="page" href="reporte.html">Reporte</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" aria-current="page"
+                                href="fUsuarios/homeUsuario.html">Usuario</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" aria-current="page"
+                                href="fJefeUsuarios/homeJefeUsuarios.html">Jefe de Usuarios</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" aria-current="page"
+                                href="fAlmacenista/homeAlmacenista.html">Almacenista</a>
+                        </li>
+
+                    </ul>
+
+                    <!-- Botón de cierre de sesión -->
+                    <form class="d-flex">
+                        <button type="button" class="btn btn-danger" onclick="location.href='../../index.html'">Cerrar
+                            Sesión
+                            <i class="fas fa-sign-out-alt"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+    </div>
+
+    <!-- Aquí tenemos todos los input que tomarán los datos del usuario accediendo a ellos a través de un ID -->
+
+    <div class="container mt-3">
+        <div>
+            <!-- Input nombre -->
+            <div class="mb-3">
+                <i class="fas fa-user-circle text-white"></i>
+                <label for="exampleInputEmail1" class="form-label text-white">Nombre del empleado</label>
+                <input id="nombre" type="text" placeholder="Ingresa el nombre del empleado" class="form-control">
+            </div>
+
+            <!-- Input email -->
+
+            <div class="mb-3">
+                <i class="far fa-envelope text-white"></i>
+                <label for="exampleInputEmail1" class="form-label text-white">Email del empleado</label>
+                <input id="email" type="email" placeholder="Ingresa el email del empleado" class="form-control">
+
+            </div>
+
+
+            <!-- Input contraeña -->
+
+            <div class="mb-3">
+                <i class="fas fa-key text-white"></i>
+                <label for="exampleInputPassword1" class="form-label text-white">Contraseña</label>
+                <input id="contra" type="password" placeholder="Ingresa una contraseña de usuario" class="form-control">
+                <div id="contraHelp" class="form-text text-white">La contraseña debe ser de al menos 6 caracteres</div>
+            </div>
+
+            <!-- Selecciona el timpo de empleado -->
+
+            <div class="mb-3">
+                <i class="fas fa-user-friends text-white"></i>
+                <label for="exampleInputPassword1" class="form-label text-white">Tipo de empleado</label>
+                <select id="tipo" name="OS" class="form-control">
+                    <option selected value="0"> Tipo de usuario </option>
+                    <option value="Almacenista">Almacenista</option>
+                    <option value="Jefe de usuarios">Jefe de usuarios</option>
+                    <option value="Usuario">Usuario</option>
+                </select>
+            </div>
+
+            <!-- Botón que hace la función de insertar los datos en la BD -->
+
+            <button type="submit" onclick="registrar()" class="btn btn-primary">Registrar</button>
+        </div>
+
+    </div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+        integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
+        integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+    <!-- Llamada al archivo JS que contiene las funciones -->
+    <script src="../js/app.js"></script>
+
+</body>
+
+</html>

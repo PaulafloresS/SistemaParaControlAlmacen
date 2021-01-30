@@ -1,0 +1,6 @@
+.c-footer > div:first-child:before {
+content: url('');
+display: block;
+margin-top: 55px;
+margin-bottom: 100px;
+}

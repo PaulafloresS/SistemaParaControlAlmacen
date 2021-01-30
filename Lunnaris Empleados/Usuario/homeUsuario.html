@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <!-- Conexión con la base de datos -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
+    <!-- firestore -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-firestore.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
+
+
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyBkFmRBYvBkXluGgg-fS0D-BDqjbEy87TE",
+            authDomain: "vales-9c420.firebaseapp.com",
+            projectId: "vales-9c420",
+            storageBucket: "vales-9c420.appspot.com",
+            messagingSenderId: "346953067056",
+            appId: "1:346953067056:web:1acf30d0392f747d4b9bf5",
+            measurementId: "G-NPYDH2SM73"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+
+
+</head>
+
+<body background="../recursos/leo.jpg_large">
+
+
+    <div class="container mt-3">
+        <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand text-white">Sistema de vales (Usuario)</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" aria-current="page"
+                                href="homeUsuario.html">Inicio</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" aria-current="page" href="PerfildeUsuario/usuario.html">Productos</a>
+                        </li>
+
+                        
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" aria-current="page" href="PerfildeUsuario/miVale.html">Mi vale</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" aria-current="page" href="PerfildeUsuario/vales.html">Vales</a>
+                        </li>
+
+                    </ul>
+                    <form class="d-flex">
+                        <button type="button" class="btn btn-danger" onclick="cerrar()">Cerrar
+                            Sesión
+                            <i class="fas fa-sign-out-alt"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+
+    <div class="container mt-3">
+
+        <div class="alert alert-success" role="alert">
+            <h4 class="alert-heading">Bienvenido al perfil de usuario</h4>
+            <p>
+                <br>
+                El objetivo de Lunnaris es siempre brindar plataformas de calidad y fácil uso para nuestros usuarios.
+                <br>
+                En esta plataforma podrás llevar fácilmente tus acciones como usuario y a continuación pondremos tus
+                principales funciones.
+            </p>
+            <hr>
+            <p class="mb-0">Podrás hacer solicitud de los productos que deseas (Recuerda que si no recoges en 3 días, 
+                tu vale será cancelado por el sistema)
+                <br>
+                Ver tus vales</p>
+          </div>
+    </div>
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+        integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
+        integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
+        crossorigin="anonymous"></script>
+    <!-- Llamada al archivo JS que contiene las funciones -->
+    <script src="js/appUsuario.js"></script>
+
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
