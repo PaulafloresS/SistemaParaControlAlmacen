@@ -34,5 +34,5 @@ Login en donde puedes elegir la opcion entre ser un almacenista o un empleado. L
 Login validando que los campos se llenen correctamente 
 </p>
 <div align="center">
-	<img src="Imagenes/datos.png" alt="Inicio" width="800"/>
+	<img src="Imagenes/Datos.png" alt="Inicio" width="800"/>
 </div>
