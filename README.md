@@ -20,12 +20,12 @@
   
 ## Algunas capturas de la ejecución
 
-<p align=" justify">
+
 Login en donde puedes elegir la opcion entre ser un almacenista o un empleado. Los empleados son:
 	- Jefe de usuarios
 	- Almacenista 
 	- Usuarios
-</p>
+
 <div align="center">
 	<img src="Imagenes/login.png" alt="Inicio" width="800"/>
 </div>
