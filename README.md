@@ -4,7 +4,6 @@
  Este es un sistema de vales de almacen que consta de 4 perfiles
 </p>
 
-
   - Jefe de almacen
   - Jefe de usuarios
   - Usuarios
@@ -20,11 +19,10 @@
   
 ## Algunas capturas de la ejecución
 
-
 Login en donde puedes elegir la opcion entre ser un almacenista o un empleado. Los empleados son:
-	- Jefe de usuarios
-	- Almacenista 
-	- Usuarios
+- Jefe de usuarios
+- Almacenista 
+- Usuarios
 
 <div align="center">
 	<img src="Imagenes/login.png" alt="Inicio" width="800"/>
