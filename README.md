@@ -3,7 +3,7 @@
 <p align=" justify">
  Este es un sistema de vales de almacen que consta de 4 perfiles
 </p>
-### Perfiles
+
 
   - Jefe de almacen
   - Jefe de usuarios
